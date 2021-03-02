@@ -1,0 +1,8 @@
+格式：
+date [OPTION] [+FORMAT]
+
+显示当前系统时间，可以指定具体的显示个数，或者设定系统时间，格式：date [OPTION] [+FORMAT]
+date: Sat 20 Feb 2021 08:55:37 AM CET
+date +%T: 08:55:37
+
+use 'date --help' 查看更多参数

@@ -1,0 +1,7 @@
+格式：
+source filename [arguments]
+
+在当前shell环境下读取文件中的命令并执行，arguments用来指定filename需要的参数
+
+source: 在当前bash环境下读取并执行对应文件中的命令，并让对应的配置信息立马对当前环境生效
+与直接执行脚本的区别是直接执行脚本变量的生命周期在脚本结束时也随之结束了

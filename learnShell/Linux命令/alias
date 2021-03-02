@@ -1,0 +1,8 @@
+格式：
+alias [-p] [name[=value] ... ]
+
+定义或者显示别名对应的内容
+
+alias  # 显示当前所有的alias
+alias -p  # 等价于alias
+alias shell='cd /home/ute/shell'  # 定义新的alias名称为shell，可以在任意位置输入shell进入到/home/ute/shell目录

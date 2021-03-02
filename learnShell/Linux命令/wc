@@ -1,0 +1,13 @@
+格式：
+wc [OPTION] [FILE]
+
+统计文件中指定对象的个数
+
+OPTIONS:
+-c: 字节数目
+-m: 字符数目
+-l: 行数统计
+-w: 单词统计
+
+wc 'python' log.txt  # 统计log中python出现的次数
+wc -m log.txt

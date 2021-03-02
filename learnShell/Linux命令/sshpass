@@ -1,0 +1,13 @@
+格式：
+sshpass [-f|-d|-p|-e] [-hV] command parameters
+
+当通过ssh连接到远程机器需要密码的时候，自动输入密码
+
+OPTIONS:
+-f: 从指定文件中获取密码
+-p: 命令行直接输入密码，不安全
+-e: 通过设置环境变量SSHPASS来保存密码
+
+sshpass -p 123456 ssh username@ip
+sshpass -f 1.txt ssh username@ip
+sshpass -e ssh username@ip

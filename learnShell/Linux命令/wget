@@ -1,0 +1,22 @@
+格式：
+wget [OPTION] [URL]
+
+从指定网址下载文件
+
+OPTIONS:
+-O: 重命名
+-c: 断点续传
+-b: 后台下载
+-t: 增加重试次数
+-i: 从文件中读取urls，并下载
+
+例子：
+wget http://www.baidu.com/test.html
+
+wget -O new.html http://www.baidu.com/test.html  # 重命名
+
+wget -i urls.txt
+
+如果出现网络不通的情况，可以如下解决：
+sudo dhclient
+wget xxx

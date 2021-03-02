@@ -1,0 +1,10 @@
+格式：
+seq [OPTION] first
+seq [OPTION] first last
+seq [OPTION] first increment last
+
+输出从first到last的数字，增量为increment
+
+OPTIONS:
+-f, --format=format: 使用指定的格式打印
+-s, --separator=STRING: 指定分隔符为STRING, 默认为换行符\n

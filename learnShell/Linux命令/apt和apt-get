@@ -1,0 +1,33 @@
+格式：
+apt [options] command
+apt-get [options] command
+apt-get [options] install | remove pkg1 [pkg2 ...]
+apt-get [options] source pkg1 [pkg2 ...]
+
+COMMANDS:
+list - list packages based on package names
+search - search in package descriptions
+show - show package details
+install - install packages                      
+reinstall - reinstall packages                 
+remove - remove packages
+autoremove - Remove automatically all unused packages
+update - update list of available packages                            只检查，不更新，给出汇总报告
+upgrade - upgrade the system by installing/upgrading packages         更新已安装的软件包  
+full-upgrade - upgrade the system by removing/installing/upgrading packages
+edit-sources - edit the source information file
+
+
+apt-get命令：
+
+可以进行安装、更新、移除软件包，apt-get是一个可以和APT(Advanced Package Tool)包管理系统交互的命令行工具，除此之外还有apt-cache，apt-config
+
+apt命令：
+apt包含了apt-get和apt-cache功能
+apt有更多的输出和改进后的设计
+
+--------sudo apt list --upgradable 查看可升级的包具体有哪些
+--------sudo apt upgrade           更新已安装的软件包
+--------sudo apt update            检查可以更新的软件包，给出汇总报告
+
+建议能用apt就用，减少使用apt-get

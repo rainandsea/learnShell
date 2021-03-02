@@ -1,0 +1,18 @@
+ssh是Linux下远程连接的基本工具，如果仅仅用来登录就太浪费了。它可是远程操作的神器
+
+-> 远程执行命令：
+如要查看远程主机上磁盘使用情况：
+ssh username@ip "df -h"  # 整个过程就像是在本地执行了一条命令一样
+ssh username@ip "df -h;ls /tmp/;cat test.txt"  # 执行多条命令，使用分号隔开就行了
+
+sshpass -p oZPS0POrRieRtu ssh toor4nsn@192.168.255.1 'bsh 1:0 "df -h;ls /tmp"'  # 引号错开使用
+
+需要注意的是，当命令多于一个时最好用括号括起来，否则在有的系统中除了第一个命令，其他都是在本地执行的
+
+-> 在远程服务器上执行本地脚本
+ssh username@ip < test.sh  # 通过重定向符将本地的脚本在远程服务器上执行
+ssh username@ip 'bash -s' < test.sh xxx  # 远程执行本地脚本传递参数时，需要为bash指定-s参数
+
+-> 在远程服务器上执行服务器上的脚本
+ssh username@ip "bash /home/ute/test.sh"  # 远程脚本需要使用绝对路径
+ssh username@ip "bash /home/ute/test.sh xxx"  # 传递参数比较简单

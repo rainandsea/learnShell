@@ -1,0 +1,54 @@
+格式：
+sed [OPTION] {script only if no other script} [input-file]
+
+sed命令用于处理、编辑文本文件
+
+常用功能：sed -i s/old/new/g 直接替换原文件
+sed -n '/expression/p' nowcoder.txt
+
+OPTION:
+-e: 以选项中指定的script来处理输入的文件, 默认
+-f: 以选项中指定的script文件来处理输入的文件
+-n: 仅显示script处理后的结果
+-i[SUFFIX]: 直接修改原文件，in-place，如果提供了SUFFIX，就会自动备份文件
+
+ACTIONS:
+a: 新增, a的后面可以接字符串，而这些字符串会在目前的下一行出现
+c: 取代, c的后面可以接字符串，而这些字符串可以取代n1, n2之间的行
+d: 删除, 因为是删除，所以d后面通常不接任何东东
+i: 插入, i的后面可以接字符串，而这些字符串会在目前的上一行出现
+p: 打印, 将某个选择的数据打印出。通常与参数sed -n一起使用
+s: 取代，会直接修改原文件进行取代，通常这个s的动作可以搭配正则表达式: s/old/new/g
+
+Examples:
+
+1. 在testfile文件的第四行后添加一行，并将结果输出到标准输出
+sed -e 4a\newline testfile         # \n没有转义
+
+假设testfile原内容如下：
+$ cat testfile
+HELLO LINUX!  
+Linux is a free unix-type opterating system.  
+This is a linux testfile!  
+Linux test 
+
+执行上述命令后的标准输出是：
+HELLO LINUX!  
+Linux is a free unix-type opterating system.  
+This is a linux testfile!  
+Linux test 
+newline
+
+！！！注意：上述命令执行后并没有直接修改原文件
+
+sed -i 3d testfile    # 删除第3行
+sed -i 1,3d testtile  # 删除第1~3行
+sed -i "2a\this is a test" testfile  # 在testfile的第2行后面新增一行为this is a test，注意\t没有转义，内容较多时必须用引号括起来
+sed -i '2,5c No 2-5 number' testfile # 替换2到5行的内容为 No 2-5 number
+
+sed -n '5p' test.txt  打印第5行内容
+sed -n '100,200p' test.txt  打印
+
+sed -n '$=' test.txt 打印最后一行行号
+
+sed -n '/error/=' test.txt  打印匹配error的行的行号

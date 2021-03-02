@@ -1,0 +1,15 @@
+格式：
+grep [OPTION] PATTERNS [FILE] ...
+
+在各个文件中查找 "包含" 指定pattern的行
+
+如：grep -i 'hello world' menu.h main.c
+
+OPTIONS:
+-i: 忽略大小写
+-m: 找到第一个就停止
+-H: 输出结果时，包含对应的文件名
+-E: pattern是扩展的正则表达式
+-n: 打印对应的行号
+
+grep '\S' nowcoder.txt  打印所有的非空行

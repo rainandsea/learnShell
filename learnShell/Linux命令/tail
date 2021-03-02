@@ -1,0 +1,10 @@
+格式：
+tail [OPTION] [FILE]
+
+打印给定文件的最后10行到窗口
+
+OPTIONS:
+-n: 指定输出的行数，如-n 5，只输出最后5行
+
+tail -n 5 test.txt
+cat test.txt | tail -n 5

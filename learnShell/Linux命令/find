@@ -1,0 +1,20 @@
+格式：
+find path -option [-print]
+
+在指定目录下查找文件。
+
+任何位于参数之前的字符串都被视为欲查找的目录，如果不指定Path，默认当前路径
+
+OPTIONS:
+-name: 文件名符合name的文件。iname会忽略大小写
+-type: 文件类型是c的文件，f代表一般文件
+
+PATH:
+/      根目录及其子目录
+.      当前目录及其子目录
+
+从根目录开始查找所有扩展名为 .log 的文本文件，并找出包含 "ERROR" 的行：
+$ find / -type f -name "*.log" | xargs grep "ERROR"
+
+从当前目录及其子目录开始查找所有扩展名为 .in 的文本文件，并找出包含 "thermcontact" 的行：
+find . -name "*.in" | xargs grep "thermcontact"
